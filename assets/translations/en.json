@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "catalog": "Catalog",
+  "favorites": "Favorites",
+  "profile": "Profile",
+  "welcome": "Welcome!",
+  "special_offers": "Special Offers",
+  "banner_1": "Up to 50% Off",
+  "banner_2": "New Collection",
+  "price": "${}",
+  "language": "Language",
+  "settings": "Settings",
+  "about_app": "About App",
+  "app_version": "Version 1.0.0",
+  "empty_favorites": "Favorites list is empty"
+}
