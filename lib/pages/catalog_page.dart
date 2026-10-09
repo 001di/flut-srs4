@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
+import '../generated/locale_keys.g.dart';
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});
@@ -11,7 +13,7 @@ class CatalogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('catalog'.tr(), style: AppTextStyles.title),
+        title: Text(LocaleKeys.catalog.tr(), style: AppTextStyles.title),
         backgroundColor: AppColors.white,
         elevation: 0,
       ),
@@ -67,7 +69,7 @@ class CatalogPage extends StatelessWidget {
                       ),
                       SizedBox(height: 4.h),
                       Text(
-                        'price'.tr(args: ['${(index + 1) * 2500}']),
+                        LocaleKeys.price.tr(args: ['${(index + 1) * 2500}']),
                         style: AppTextStyles.body.copyWith(
                           color: AppColors.primary,
                           fontWeight: FontWeight.bold,

@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
+import '../generated/locale_keys.g.dart'; // <-- 1. Импортируем сгенерированный g-файл
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -11,7 +13,8 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('profile'.tr(), style: AppTextStyles.title),
+        // 2. Заменили 'profile'.tr() на LocaleKeys.profile.tr()
+        title: Text(LocaleKeys.profile.tr(), style: AppTextStyles.title),
         backgroundColor: AppColors.white,
         elevation: 0,
       ),
@@ -43,7 +46,8 @@ class ProfilePage extends StatelessWidget {
                     children: [
                       Icon(Icons.language, color: AppColors.primary, size: 22.w),
                       SizedBox(width: 12.w),
-                      Text('language'.tr(), style: AppTextStyles.body),
+                      // 2. Заменили 'language'.tr() на LocaleKeys.language.tr()
+                      Text(LocaleKeys.language.tr(), style: AppTextStyles.body),
                     ],
                   ),
                   DropdownButton<Locale>(
@@ -65,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                     ],
                     onChanged: (Locale? locale) {
                       if (locale != null) {
-                        context.setLocale(locale);
+                        context.setLocale(locale); // При смене локали вся страница с LocaleKeys автоматически обновится
                       }
                     },
                   ),
@@ -76,13 +80,15 @@ class ProfilePage extends StatelessWidget {
 
             _buildProfileTile(
               icon: Icons.settings_outlined,
-              title: 'settings'.tr(),
+              // 2. Заменили 'settings'.tr() на LocaleKeys.settings.tr()
+              title: LocaleKeys.settings.tr(),
             ),
             SizedBox(height: 12.h),
             _buildProfileTile(
               icon: Icons.info_outline,
-              title: 'about_app'.tr(),
-              subtitle: 'app_version'.tr(),
+              // 2. Заменили 'about_app'.tr() и 'app_version'.tr()
+              title: LocaleKeys.about_app.tr(),
+              subtitle: LocaleKeys.app_version.tr(),
             ),
           ],
         ),

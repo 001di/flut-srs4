@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
 import 'pages/catalog_page.dart';
 import 'pages/favorites_page.dart';
+import 'pages/home_page.dart';
 import 'pages/profile_page.dart';
 import 'widgets/bottom_bar.dart';
 
@@ -15,11 +15,12 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = const [
-    HomePage(),
-    CatalogPage(),
-    FavoritesPage(),
-    ProfilePage(),
+  // Убран ключевое слово const из списка _pages
+  final List<Widget> _pages = [
+    const HomePage(),
+    const CatalogPage(),
+    const FavoritesPage(),
+    const ProfilePage(),
   ];
 
   @override

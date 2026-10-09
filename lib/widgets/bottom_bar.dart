@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../core/constants/app_colors.dart';
+import '../generated/locale_keys.g.dart'; // 1. Импортируем файл с ключами
 
 class CustomBottomBar extends StatelessWidget {
   final int currentIndex;
@@ -39,22 +41,22 @@ class CustomBottomBar extends StatelessWidget {
           BottomNavigationBarItem(
             icon: const Icon(Icons.home_outlined),
             activeIcon: const Icon(Icons.home),
-            label: 'home'.tr(),
+            label: LocaleKeys.home.tr(), 
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.grid_view_outlined),
             activeIcon: const Icon(Icons.grid_view),
-            label: 'catalog'.tr(),
+            label: LocaleKeys.catalog.tr(), 
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.favorite_outline),
             activeIcon: const Icon(Icons.favorite),
-            label: 'favorites'.tr(),
+            label: LocaleKeys.favorites.tr(),  
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.person_outline),
             activeIcon: const Icon(Icons.person),
-            label: 'profile'.tr(),
+            label: LocaleKeys.profile.tr(), 
           ),
         ],
       ),

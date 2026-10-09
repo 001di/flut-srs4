@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'core/constants/app_colors.dart';
-import 'main_screen.dart';
 
+import 'core/constants/app_colors.dart';
+import 'pages/posts_page.dart'; // 1. Импортируем созданный экран
+
+// Связь с платформой перед выполнением асинхронного кода
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const MainScreen(),
+      child: const PostsPage(), // 2. Заменили MainScreen() на PostsPage()
     );
   }
 }

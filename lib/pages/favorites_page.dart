@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_text_styles.dart';
+import '../generated/locale_keys.g.dart'; // <-- Импортируем сгенерированный g-файл
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -11,7 +13,8 @@ class FavoritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('favorites'.tr(), style: AppTextStyles.title),
+        // Используем LocaleKeys.favorites вместо 'favorites'.tr()
+        title: Text(LocaleKeys.favorites.tr(), style: AppTextStyles.title),
         backgroundColor: AppColors.white,
         elevation: 0,
       ),
@@ -56,7 +59,8 @@ class FavoritesPage extends StatelessWidget {
                       Text('Favorite Product ${index + 1}', style: AppTextStyles.body),
                       SizedBox(height: 4.h),
                       Text(
-                        'price'.tr(args: ['${(index + 1) * 5000}']),
+                        // Используем LocaleKeys.price с аргументами
+                        LocaleKeys.price.tr(args: ['${(index + 1) * 5000}']),
                         style: AppTextStyles.caption.copyWith(
                           color: AppColors.primary,
                           fontWeight: FontWeight.bold,
